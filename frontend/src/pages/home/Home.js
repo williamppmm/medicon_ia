@@ -1,56 +1,77 @@
-// src/pages/home/Home.js
+//frontend/src/pages/home/Home.js
 
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import WhatsAppButton from '../../components/common/WhatsAppButton';
 import './Home.css';
 
-// Importa logo y agente IA
-import logo from '../../assets/logos/logo.png';
-import aiAgent from '../../assets/icons/ai-agent.png';
+// Cambiaría el logo por uno médico
+import logo from '../../assets/logos/medicon-logo.png';
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <Container fluid className="home-page d-flex align-items-center justify-content-center">
-      <Row className="text-center">
+    <Container fluid className="medicon-home text-center d-flex align-items-center justify-content-center">
+      <Row>
         <Col>
-          {/* Título principal */}
-          <h1 className="main-title mb-3">Medicon IA</h1>
-          <p className="subtitle mb-5">Tu asistente de salud inteligente</p>
-
-          {/* Logo principal */}
+          {/* Título médico */}
+          <h1 className="mb-4">Medicon IA - Tu Asistente Médico Inteligente</h1>
+          
+          {/* Logo médico con animación de pulso (corazón) */}
           <div className="logo-container mb-4">
-            <img src={logo} alt="Medicon IA" className="logo-spin" />
+            <img 
+              src={logo} 
+              alt="Medicon IA" 
+              className="logo-pulse"
+            />
           </div>
 
-          {/* Botón para acceder al agente IA */}
-          <Button
-            className="btn-ai mb-4"
-            size="lg"
-            onClick={() => navigate('/consulta-ia')}
-          >
-            Consultar con Inteligencia Artificial
-          </Button>
-
-          {/* Icono del agente IA con animación */}
-          <div className="ai-icon-container mb-5">
-            <img src={aiAgent} alt="Agente IA" className="ai-icon" />
-          </div>
-
-          {/* Botones adicionales */}
+          {/* Botones principales adaptados */}
           <div className="mb-4">
-            <Button variant="outline-light" className="mx-2" size="lg" onClick={() => navigate('/registro-usuario')}>
-              Registrarse
+            <Button 
+              onClick={() => navigate('/consulta-rapida')} 
+              variant="primary" 
+              size="lg" 
+              className="mx-2"
+            >
+              Consulta Rápida
             </Button>
-            <Button variant="outline-light" className="mx-2" size="lg" onClick={() => navigate('/login-usuario')}>
-              Iniciar Sesión
+            <Button 
+              onClick={() => navigate('/historial')} 
+              variant="success" 
+              size="lg" 
+              className="mx-2"
+            >
+              Mi Historial
             </Button>
           </div>
 
-          <WhatsAppButton />
+          {/* WhatsApp adaptado para emergencias */}
+          <div className="mb-4">
+            <WhatsAppButton 
+              message="Necesito asistencia médica urgente" 
+              label="Emergencia Médica"
+            />
+          </div>
+
+          {/* Sección de especialidades en lugar de promociones */}
+          <h4 className="mb-3">Nuestras Especialidades</h4>
+          <Link to="/especialidades" className="btn btn-outline-primary btn-lg mb-3">
+            Ver Especialidades Médicas
+          </Link>
+
+          {/* Añadiría acceso rápido al chat médico */}
+          <div className="mt-4">
+            <Button 
+              onClick={() => navigate('/chat-medico')} 
+              variant="info" 
+              size="lg"
+            >
+              Chat con Médico Virtual
+            </Button>
+          </div>
         </Col>
       </Row>
     </Container>

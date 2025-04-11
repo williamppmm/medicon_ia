@@ -1,0 +1,33 @@
+/* frontend/src/pages/home/Home.css */
+
+.medicon-home {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    background-image: url('../../assets/images/medical-bg.PNG');
+
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Animación de pulso en lugar de giro */
+  .logo-pulse {
+    animation: pulse 2s infinite;
+    max-height: 150px;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Estilos para botones médicos */
+  .btn-primary {
+    background-color: #3DB2FF;
+    border-color: #3DB2FF;
+  }
+  
+  .btn-success {
+    background-color: #00C897;
+    border-color: #00C897;
+  }

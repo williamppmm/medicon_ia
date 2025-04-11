@@ -17,12 +17,12 @@ function Footer() {
           {/* Columna 1: Logo y Derechos Reservados */}
           <Col md={4} className="text-center mb-3">
             <img
-              src={require('../../assets/logos/logo.png')}
+              src={require('../../assets/logos/medicon-logo.png')}
               alt="Logo Casino La Fortuna"
               width="50"
               height="50"
             />
-            <h5 className="mt-2">Casino La Fortuna</h5>
+            <h5 className="mt-2">Medicon IA</h5>
             <p>© 2024 Derechos reservados</p>
             <p>Diseñado por CaliByte</p>
             <p>

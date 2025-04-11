@@ -43,11 +43,11 @@ function NavigationBar() {
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
-            src={require('../../assets/logos/logo.png')}
+            src={require('../../assets/logos/medicon-logo.png')}
             width="40"
             height="40"
             className="d-inline-block align-top"
-            alt="Logo Casino La Fortuna"
+            alt="Logo Medicon IA"
           />
           {/*Opcional: Cambiar el texto del span por el nombre del casino*/}
           <span style={{ color: '#FFF', fontWeight: 'bold' }}></span> 
